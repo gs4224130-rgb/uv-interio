@@ -1,0 +1,39 @@
+UV INTERIO — EASY IMAGE REPLACEMENT GUIDE
+
+This version is intentionally FLAT: all images sit in the same folder as index.html.
+That makes GitHub replacement much easier.
+
+KEEP THESE FILENAMES EXACTLY:
+SHOWROOM / OWNER
+- showroom-front.webp
+- showroom-wide.webp
+- showroom-interior.webp
+- owner-gourav.webp
+- uv-logo-sign.webp
+
+20 PANEL SAMPLE IMAGES
+- panel-01.webp through panel-20.webp
+
+10 LIGHT / JHOOMAR SAMPLE IMAGES
+- light-01.webp through light-10.webp
+
+HOW TO REPLACE AN IMAGE LATER
+1. Prepare your new JPG/PNG/WebP image.
+2. Rename it to the exact filename you want to replace, e.g. panel-01.webp.
+3. On GitHub open the uv-interio repository.
+4. Add file > Upload files.
+5. Upload the replacement file with the SAME filename.
+6. Commit changes.
+7. Wait for GitHub Pages deployment and hard refresh Ctrl+Shift+R.
+
+IMPORTANT
+- Best panel photo ratio: landscape about 4:3.
+- Best light/jhoomar photo ratio: landscape about 4:3.
+- Recommended width: 1200-1800 px.
+- Use WebP for smaller/faster pages.
+- The panel and light images included here are premium 3D-style visual inspiration samples, not guaranteed exact inventory.
+- Keep real showroom and owner photos unless you intentionally replace them.
+
+DIRECT UPLOAD
+Select every file inside this folder and upload to your GitHub repository ROOT.
+Do not upload the outer folder itself and do not upload only the ZIP.
