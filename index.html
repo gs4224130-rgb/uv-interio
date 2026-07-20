@@ -3,133 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Premium home decor, interior design, wall panels, chandeliers, decorative lighting and complete interior solutions in Tijara." />
-  <title>[Insert Showroom Name] | Home Decor & Interior Design</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="UV INTERIO — premium wall panels, WPC louvers, UV sheets, chandeliers, lamps and designer lighting near Jain Honda, Alwar Road, Tijara, Rajasthan." />
+  <meta name="theme-color" content="#1d211d" />
+  <title>UV INTERIO | Panels, Louvers & Designer Lighting in Tijara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
     <div class="container nav-wrap">
-      <a class="brand" href="index.html" aria-label="Homepage">
-        <span class="brand-mark">ID</span>
-        <span class="brand-text">[Insert Showroom Name]</span>
+      <a class="brand" href="index.html" aria-label="UV Interio homepage">
+        <span class="brand-mark">UV</span>
+        <span class="brand-copy"><strong>INTERIO</strong><small>Aapke Sapno Ka Ghar</small></span>
       </a>
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav class="site-nav" aria-label="Primary navigation">
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+      <nav class="site-nav" aria-label="Primary navigation" data-nav>
         <a class="active" href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="services.html">Products & Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="services.html">Collections</a>
+        <a href="contact.html">Visit Us</a>
       </nav>
-      <a class="btn btn-small nav-cta" href="contact.html">Visit Showroom</a>
+      <a class="btn btn-small nav-cta" href="contact.html">Plan a Visit <span>↗</span></a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content reveal">
-        <p class="eyebrow">HOME DECOR • INTERIOR DESIGN • LIGHTING</p>
-        <h1>Spaces designed to feel <em>distinctly yours.</em></h1>
-        <p class="hero-copy">Transform your home with curated wall panels, louvers, PVC sheets, chandeliers, designer lights and thoughtful interior styling — all under one roof in Tijara.</p>
-        <div class="hero-actions">
-          <a class="btn" href="services.html">Explore Our Collection</a>
-          <a class="text-link light" href="contact.html">Plan Your Space <span>→</span></a>
-        </div>
+    <section class="hero hero-v2">
+      <div class="hero-media hero-parallax" aria-hidden="true">
+        <img src="assets/images/showroom-interior.webp" alt="" fetchpriority="high" />
       </div>
-      <div class="hero-card reveal delay-1">
-        <span>01</span>
-        <div>
-          <strong>Complete Interior Solutions</strong>
-          <p>From walls and lighting to styling and installation.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="intro section-pad">
-      <div class="container split-grid">
-        <div class="section-heading reveal">
-          <p class="eyebrow dark">DESIGN • DETAIL • DIFFERENCE</p>
-          <h2>Beautiful interiors begin with the right details.</h2>
-        </div>
-        <div class="intro-copy reveal delay-1">
-          <p>At <strong>[Insert Showroom Name]</strong>, we bring together modern decorative materials and statement lighting to help homeowners create spaces that feel refined, warm and personal.</p>
-          <a class="text-link" href="about.html">Discover our story <span>→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="category-grid container section-bottom">
-      <article class="category-card large reveal">
-        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85" alt="Modern luxury living room with decorative wall panels" />
-        <div class="card-overlay"><span>01</span><h3>Wall Panels & Louvers</h3><p>Texture, warmth and architectural character.</p></div>
-      </article>
-      <article class="category-card reveal delay-1">
-        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1200&q=85" alt="Elegant designer chandelier in a premium interior" />
-        <div class="card-overlay"><span>02</span><h3>Chandeliers & Jhoomar</h3><p>Statement lighting for every scale.</p></div>
-      </article>
-      <article class="category-card reveal delay-2">
-        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85" alt="Contemporary home interior with decorative lighting" />
-        <div class="card-overlay"><span>03</span><h3>Designer Lighting</h3><p>Ambient, accent and festive lighting.</p></div>
-      </article>
-    </section>
-
-    <section class="feature-band section-pad">
-      <div class="container feature-grid">
-        <div class="feature-image reveal">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85" alt="Premium modern interior featuring wall textures and warm lighting" />
-        </div>
-        <div class="feature-content reveal delay-1">
-          <p class="eyebrow dark">FROM IDEA TO INSTALLATION</p>
-          <h2>One showroom. Hundreds of ways to transform your home.</h2>
-          <p>Choose materials, compare textures, explore lighting styles and get practical design guidance tailored to your room, budget and taste.</p>
-          <div class="mini-features">
-            <div><strong>01</strong><span>Curated Materials</span></div>
-            <div><strong>02</strong><span>Design Guidance</span></div>
-            <div><strong>03</strong><span>Installation Support</span></div>
+      <div class="hero-shade"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy-block reveal">
+          <p class="eyebrow">TIJARA • PANELS • LIGHTING • INTERIORS</p>
+          <h1><span>UV</span> INTERIO</h1>
+          <p class="hero-tagline">Transform walls. Shape atmospheres. <em>Define your space.</em></p>
+          <p class="hero-description">A curated showroom for PVC panels, WPC louvers, UV sheets, charcoal panels, chandeliers, lamps and designer lighting — with real finishes you can see before you choose.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#collections">Explore Collection <span>↘</span></a>
+            <a class="ghost-link" href="contact.html">Visit the showroom <span>↗</span></a>
           </div>
-          <a class="btn btn-dark" href="contact.html">Book a Showroom Visit</a>
+        </div>
+        <div class="hero-meta reveal delay-2">
+          <div class="meta-pill"><span class="status-dot"></span> Open for showroom visits</div>
+          <div class="hero-address"><span>Location</span><strong>Near Jain Honda,<br>Alwar Road, Tijara</strong></div>
+        </div>
+      </div>
+      <a href="#founder" class="scroll-cue" aria-label="Scroll to founder section"><span>SCROLL</span><i></i></a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>PVC PANELS</span><i>✦</i><span>WPC LOUVERS</span><i>✦</i><span>UV SHEETS</span><i>✦</i><span>CHARCOAL PANELS</span><i>✦</i><span>JHOOMAR</span><i>✦</i><span>DESIGNER LIGHTS</span><i>✦</i>
+        <span>PVC PANELS</span><i>✦</i><span>WPC LOUVERS</span><i>✦</i><span>UV SHEETS</span><i>✦</i><span>CHARCOAL PANELS</span><i>✦</i><span>JHOOMAR</span><i>✦</i><span>DESIGNER LIGHTS</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="founder-intro section-pad" id="founder">
+      <div class="container founder-grid">
+        <div class="founder-photo reveal tilt-card">
+          <img src="assets/images/owner-gourav.webp" alt="Gourav Singh, owner of UV Interio" loading="lazy" />
+          <div class="photo-label"><span>FOUNDER / OWNER</span><strong>Gourav Singh</strong></div>
+        </div>
+        <div class="founder-copy reveal delay-1">
+          <p class="eyebrow dark">THE PERSON BEHIND UV INTERIO</p>
+          <h2>Built around one simple idea: <em>see it, feel it, then design it.</em></h2>
+          <p>UV INTERIO brings wall finishes and statement lighting together in one physical showroom so you can compare textures, proportions and glow in real life — not just on a phone screen.</p>
+          <div class="signature-line"><span>Gourav Singh</span><small>Owner, UV INTERIO</small></div>
+          <a class="text-link" href="about.html">Read our story <span>↗</span></a>
         </div>
       </div>
     </section>
 
-    <section class="products section-pad">
+    <section class="showroom-story section-pad section-dark">
+      <div class="container showroom-grid">
+        <div class="showroom-copy reveal">
+          <p class="eyebrow">REAL SHOWROOM • REAL MATERIALS</p>
+          <h2>Not a catalogue.<br><em>A space you can walk through.</em></h2>
+          <p>Explore finishes on full-height display, compare warm and cool tones, see how chandeliers actually glow, and build a combination that works for your room.</p>
+          <div class="stats-grid">
+            <div><strong data-counter="20">20+</strong><span>Panel inspirations shown online</span></div>
+            <div><strong data-counter="10">10+</strong><span>Lighting styles featured</span></div>
+            <div><strong>1</strong><span>Showroom for complete selection</span></div>
+          </div>
+        </div>
+        <div class="showroom-stack reveal delay-1">
+          <figure class="stack-main tilt-card"><img src="assets/images/showroom-wide.webp" alt="Inside UV Interio showroom with wall panels and decorative lights" loading="lazy" /></figure>
+          <figure class="stack-float"><img src="assets/images/showroom-front.webp" alt="UV Interio showroom exterior in Tijara" loading="lazy" /></figure>
+          <span class="stack-caption">Near Jain Honda · Alwar Road · Tijara</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="collections section-pad" id="collections">
       <div class="container">
         <div class="section-title-row reveal">
-          <div><p class="eyebrow dark">OUR COLLECTION</p><h2>Made for modern Indian homes.</h2></div>
-          <a class="text-link" href="services.html">View all categories <span>→</span></a>
+          <div><p class="eyebrow dark">CURATED BY CATEGORY</p><h2>Choose your <em>vibe.</em></h2></div>
+          <p class="section-sidecopy">Minimal, warm, bold, glossy, fluted or statement-lit — start with a feeling, then build the finish.</p>
         </div>
-        <div class="product-list">
-          <article class="product-row reveal"><span>01</span><h3>PVC Wall Panels</h3><p>Clean, low-maintenance finishes for feature walls and full rooms.</p><b>→</b></article>
-          <article class="product-row reveal"><span>02</span><h3>Decorative Louvers</h3><p>Vertical rhythm, texture and a premium architectural look.</p><b>→</b></article>
-          <article class="product-row reveal"><span>03</span><h3>PVC / Marble Sheets</h3><p>Statement surfaces with elegant stone-inspired finishes.</p><b>→</b></article>
-          <article class="product-row reveal"><span>04</span><h3>Jhoomar & Chandeliers</h3><p>From compact decorative pieces to grand centerpiece lighting.</p><b>→</b></article>
-          <article class="product-row reveal"><span>05</span><h3>Designer & Festive Lights</h3><p>Wall lamps, pendant lights, profile lights and Diwali collections.</p><b>→</b></article>
+        <div class="collection-bento">
+          <a class="bento-card bento-panels reveal" href="#panel-lab"><img src="assets/images/panels/panel-09.webp" alt="Wood-tone panel finish sample" loading="lazy" /><div><span>01 / WALLS</span><h3>PVC Panels & Louvers</h3><p>Texture that changes the room before furniture even enters.</p></div></a>
+          <a class="bento-card bento-light reveal delay-1" href="#lighting-edit"><img src="assets/images/lights/light-01.webp" alt="Crystal chandelier from UV Interio showroom" loading="lazy" /><div><span>02 / LIGHT</span><h3>Jhoomar & Chandeliers</h3><p>From clean modern rings to full crystal drama.</p></div></a>
+          <a class="bento-card bento-sheet reveal" href="services.html"><img src="assets/images/panels/panel-01.webp" alt="Decorative wall sheet finish sample" loading="lazy" /><div><span>03 / SURFACES</span><h3>UV Sheets & Charcoal</h3><p>Gloss, stone looks and architectural accents.</p></div></a>
+          <a class="bento-card bento-design reveal delay-1" href="contact.html"><img src="assets/images/showroom-interior.webp" alt="Designer lighting and panel display at UV Interio" loading="lazy" /><div><span>04 / GUIDANCE</span><h3>Mix. Match. Visualise.</h3><p>Bring a room photo and shortlist materials together.</p></div></a>
         </div>
       </div>
     </section>
 
-    <section class="cta-strip">
-      <div class="container cta-inner reveal">
-        <div><p class="eyebrow">LET'S DESIGN SOMETHING BEAUTIFUL</p><h2>Bring your room photos. Leave with a clearer vision.</h2></div>
-        <a class="btn btn-light" href="contact.html">Contact Us</a>
+    <section class="panel-lab section-pad" id="panel-lab">
+      <div class="container">
+        <div class="section-title-row reveal">
+          <div><p class="eyebrow dark">THE PANEL LAB</p><h2>20 finish ideas.<br><em>One wall can change everything.</em></h2></div>
+          <div class="filter-bar" data-panel-filters>
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="wood">Wood</button>
+            <button class="filter-chip" data-filter="fluted">Fluted</button>
+            <button class="filter-chip" data-filter="stone">Stone</button>
+            <button class="filter-chip" data-filter="accent">Accent</button>
+          </div>
+        </div>
+        <div class="panel-grid" id="panel-grid" aria-live="polite"></div>
+        <p class="catalog-note">* These are visual sample references cropped from the UV INTERIO showroom display. Visit the showroom to confirm exact shade, texture, size and availability.</p>
+      </div>
+    </section>
+
+    <section class="lighting-edit section-pad section-dark" id="lighting-edit">
+      <div class="container">
+        <div class="section-title-row reveal">
+          <div><p class="eyebrow">THE LIGHTING EDIT</p><h2>10 ways to make the ceiling <em>the main character.</em></h2></div>
+          <a class="ghost-link" href="services.html#lighting">See all lighting <span>↗</span></a>
+        </div>
+        <div class="light-strip" id="light-strip"></div>
+        <p class="catalog-note light-note">* Lighting images are real crops from the UV INTERIO showroom display and are shown as style references.</p>
+      </div>
+    </section>
+
+    <section class="experience section-pad">
+      <div class="container experience-grid">
+        <div class="experience-heading reveal">
+          <p class="eyebrow dark">HOW TO SHOP BETTER</p>
+          <h2>Come with a room photo.<br>Leave with a <em>clear direction.</em></h2>
+        </div>
+        <div class="steps-list">
+          <article class="step reveal"><span>01</span><div><h3>Show us the room</h3><p>Bring photos, dimensions or even just a rough idea of the wall you want to transform.</p></div></article>
+          <article class="step reveal"><span>02</span><div><h3>Compare in real light</h3><p>Put panel tones, louvers, sheets and lighting styles side by side before deciding.</p></div></article>
+          <article class="step reveal"><span>03</span><div><h3>Build the combination</h3><p>Shortlist finishes that work together so the final space feels intentional, not random.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit-cta">
+      <img src="assets/images/showroom-front.webp" alt="Exterior of UV Interio showroom in Tijara" loading="lazy" />
+      <div class="visit-overlay"></div>
+      <div class="container visit-content reveal">
+        <p class="eyebrow">SEE IT IN PERSON</p>
+        <h2>Your next room starts<br><em>at the showroom.</em></h2>
+        <p>Near Jain Honda, Alwar Road, Tijara, Rajasthan</p>
+        <div class="visit-actions"><a class="btn btn-light" href="contact.html">Get Directions <span>↗</span></a><a class="ghost-link" href="contact.html">Contact UV INTERIO <span>↗</span></a></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">ID</span><span class="brand-text">[Insert Showroom Name]</span></a><p>Home decor, interior materials and designer lighting in Tijara.</p></div>
-      <div><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Products & Services</a><a href="contact.html">Contact</a></div>
-      <div><h4>Showroom</h4><p>Near Jan Honda, Alwar Road<br>Tijara, Rajasthan<br>[Insert PIN Code]</p></div>
-      <div><h4>Owner</h4><p>Gourav Singh<br>[Insert Phone Number]<br>[Insert Email]</p></div>
+    <div class="container footer-top">
+      <div class="footer-brand-block"><a class="brand" href="index.html"><span class="brand-mark">UV</span><span class="brand-copy"><strong>INTERIO</strong><small>Aapke Sapno Ka Ghar</small></span></a><p>Panels, louvers, decorative surfaces and statement lighting for modern interiors.</p></div>
+      <div><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Collections</a><a href="contact.html">Visit Showroom</a></div>
+      <div><h4>Showroom</h4><p>Near Jain Honda<br>Alwar Road, Tijara<br>Rajasthan, India</p></div>
+      <div><h4>Owner</h4><p>Gourav Singh</p><a href="contact.html">Contact details →</a></div>
     </div>
-    <div class="container footer-bottom"><span>© <span id="year"></span> [Insert Showroom Name]. All rights reserved.</span><span>Designed for beautiful living.</span></div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> UV INTERIO</span><span>Made for spaces with personality.</span></div>
   </footer>
+
+  <script src="catalog-data.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
