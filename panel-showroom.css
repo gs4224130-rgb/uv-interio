@@ -1,0 +1,157 @@
+/* UV INTERIO — PANEL SHOWROOM REDESIGN */
+
+:root{
+  --uv-warm-light:#ffe3a7;
+  --uv-panel-gold:#d8c6aa;
+}
+
+/* SECTION-BASED PANEL WALLS — side/top/bottom accents, not full wallpaper */
+.uv-panel-skin{position:relative;isolation:isolate;overflow:hidden}
+.uv-panel-skin>.container,.uv-panel-skin>.visit-content{position:relative;z-index:4}
+.uv-panel-skin:before,.uv-panel-skin:after{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  background-position:center;background-size:cover;opacity:.17;
+  filter:saturate(.86) contrast(1.03)
+}
+.uv-panel-skin:before{
+  top:0;bottom:0;right:0;width:min(26vw,380px);
+  mask-image:linear-gradient(90deg,transparent,black 34%)
+}
+.uv-panel-skin:after{
+  left:0;right:0;bottom:0;height:115px;opacity:.12;
+  mask-image:linear-gradient(180deg,transparent,black)
+}
+.uv-panel-skin-walnut:before,.uv-panel-skin-walnut:after{background-image:url("uv-wall-bg-walnut.webp")}
+.uv-panel-skin-showroom:before,.uv-panel-skin-showroom:after{background-image:url("uv-wall-bg-showroom.webp")}
+.uv-panel-skin-tv:before,.uv-panel-skin-tv:after{background-image:url("uv-wall-bg-tv.webp")}
+.uv-panel-skin-colors:before,.uv-panel-skin-colors:after{background-image:url("uv-wall-bg-colors.webp")}
+.uv-panel-skin-walnut:before{background-position:76% center}
+.uv-panel-skin-showroom:before{background-position:58% center}
+.uv-panel-skin-tv:before{background-position:72% center}
+.uv-panel-skin-colors:before{background-position:54% center}
+.section-dark.uv-panel-skin:before{opacity:.23;mix-blend-mode:luminosity}
+.section-dark.uv-panel-skin:after{opacity:.16}
+
+/* subtle slatted wall depth behind content */
+.uv-panel-skin .container:before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;inset:-42px -34px;opacity:.10;
+  background:repeating-linear-gradient(90deg,rgba(181,155,118,.22) 0 4px,transparent 4px 15px);
+  mask-image:linear-gradient(90deg,black,transparent 30%,transparent 72%,black)
+}
+
+/* PROFILE / STRIP LIGHTS */
+.uv-profile-light{
+  position:absolute;z-index:2;pointer-events:none;width:min(46vw,650px);height:2px;
+  right:4vw;top:28px;
+  background:linear-gradient(90deg,transparent,var(--uv-warm-light),#fff4d5,transparent);
+  box-shadow:0 0 9px rgba(255,227,167,.85),0 0 30px rgba(255,210,125,.42),0 0 80px rgba(255,196,87,.20);
+  opacity:.78
+}
+.uv-panel-skin:nth-of-type(even)>.uv-profile-light{left:3vw;right:auto;top:auto;bottom:30px}
+
+.uv-lit-heading{position:relative}
+.uv-heading-strip{
+  position:absolute;pointer-events:none;display:block;height:2px;
+  width:clamp(72px,12vw,185px);left:0;bottom:-20px;border-radius:999px;
+  background:linear-gradient(90deg,#fff8df,var(--uv-warm-light),transparent);
+  box-shadow:0 0 9px rgba(255,227,167,.85),0 0 30px rgba(255,207,116,.32)
+}
+.uv-heading-strip-2{width:clamp(115px,18vw,255px)}
+.uv-heading-strip-3{width:78px;left:auto;right:8%}
+
+/* NEW USER-UPLOADED PANELS IN THE SCROLL WALL */
+.uv-wall-panels{gap:1px!important}
+.uv-build-panel img{object-position:center!important;transform:scale(1.02)!important}
+.uv-wall-frame{
+  background:#201d19!important;
+  box-shadow:0 60px 150px rgba(0,0,0,.46)!important
+}
+.uv-wall-base{
+  background-image:
+    linear-gradient(90deg,rgba(20,18,15,.34),rgba(255,225,174,.08),rgba(20,18,15,.34)),
+    url("uv-wall-bg-tv.webp")!important;
+  background-position:center!important;
+  filter:brightness(.45) saturate(.72)!important
+}
+
+/* BIG JHUMAR — comes from above and travels down */
+.uv-big-jhumar{
+  position:absolute;z-index:10;left:50%;top:-125px;
+  width:clamp(235px,24vw,400px);height:530px;
+  margin-left:clamp(100px,18vw,310px);
+  transform-origin:50% 0%;pointer-events:none;opacity:0;
+  will-change:transform,opacity
+}
+.uv-big-jhumar-wire{
+  position:absolute;left:50%;top:0;width:1px;height:150px;transform:translateX(-50%);
+  background:linear-gradient(#d9c8a8,rgba(217,200,168,.18))
+}
+.uv-big-jhumar-shell{
+  position:absolute;left:50%;top:132px;width:100%;aspect-ratio:.82;transform:translateX(-50%);
+  overflow:hidden;border-radius:50% 50% 44% 44%/40% 40% 60% 60%;
+  background:rgba(18,20,18,.25);border:1px solid rgba(255,234,191,.22);
+  box-shadow:0 30px 95px rgba(0,0,0,.35)
+}
+.uv-big-jhumar-shell img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) brightness(1.05) contrast(1.03);transform:scale(1.08)}
+.uv-big-jhumar-shell:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.07),transparent 38%,rgba(0,0,0,.18))}
+.uv-big-jhumar-glow{
+  position:absolute;z-index:2;left:50%;top:52%;width:76%;aspect-ratio:1;transform:translate(-50%,-50%);
+  border-radius:50%;background:radial-gradient(circle,rgba(255,230,177,.46),rgba(255,197,91,.11) 45%,transparent 71%);
+  filter:blur(17px);mix-blend-mode:screen
+}
+
+/* MORE FLOATING JHUMARS LOWER DOWN */
+.uv-lower-jhumar{
+  position:absolute;z-index:3;width:clamp(120px,12vw,190px);aspect-ratio:.78;
+  pointer-events:none;opacity:0;
+  transition:opacity .7s ease,transform 1.05s cubic-bezier(.16,1,.3,1)
+}
+.uv-lower-jhumar>span{
+  display:block;width:100%;height:100%;overflow:hidden;
+  border-radius:50% 50% 44% 44%/42% 42% 58% 58%;
+  box-shadow:0 25px 70px rgba(0,0,0,.20);
+  animation:uvLowerFloat 5.8s ease-in-out infinite alternate
+}
+.uv-lower-jhumar img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) brightness(.95)}
+.uv-lower-jhumar-left{left:-1.5vw;top:18%;transform:translate3d(-120px,40px,0) rotate(-8deg) scale(.84)}
+.uv-lower-jhumar-right{right:-1vw;top:24%;transform:translate3d(120px,-20px,0) rotate(8deg) scale(.84)}
+.uv-lower-jhumar-small{width:clamp(90px,9vw,145px);top:58%}
+.uv-lower-jhumar-deep{top:10%;width:clamp(140px,14vw,220px)}
+.uv-lower-jhumar.is-visible{opacity:.42;transform:translate3d(0,0,0) rotate(0) scale(1)}
+.section-dark .uv-lower-jhumar.is-visible,.visit-cta .uv-lower-jhumar.is-visible{opacity:.58}
+@keyframes uvLowerFloat{
+  from{transform:translate3d(0,0,0) rotate(-1deg)}
+  to{transform:translate3d(10px,-14px,0) rotate(1.2deg)}
+}
+
+/* Product panel cards feel more like real display samples */
+.panel-lab .panel-grid{position:relative;z-index:3}
+.panel-lab .panel-card{border:1px solid rgba(255,255,255,.38);box-shadow:0 18px 45px rgba(29,33,29,.10)}
+.panel-lab .panel-media{position:relative}
+.panel-lab .panel-media:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,255,255,.08),transparent 18%,transparent 82%,rgba(0,0,0,.09))
+}
+
+@media(min-width:901px){.uv-panel-skin:before{background-attachment:fixed}}
+@media(max-width:900px){
+  .uv-panel-skin:before{width:34vw;opacity:.12}
+  .uv-profile-light{width:56vw}
+  .uv-big-jhumar{width:180px;margin-left:18vw}
+  .uv-lower-jhumar{width:100px}
+}
+@media(max-width:640px){
+  .uv-panel-skin:before{width:44vw;opacity:.10}
+  .uv-panel-skin:after{height:65px}
+  .uv-panel-skin .container:before{opacity:.07}
+  .uv-profile-light{width:64vw;opacity:.58}
+  .uv-heading-strip{bottom:-13px}
+  .uv-big-jhumar{width:128px;height:340px;margin-left:17vw;top:-100px}
+  .uv-big-jhumar-wire{height:100px}
+  .uv-big-jhumar-shell{top:90px}
+  .uv-lower-jhumar.is-visible{opacity:.28}
+  .uv-lower-jhumar-deep{width:115px}
+}
+@media(prefers-reduced-motion:reduce){
+  .uv-big-jhumar,.uv-lower-jhumar{animation:none!important}
+}
