@@ -314,6 +314,82 @@
     });
   }
 
+
+  /* IDEA 5 — animated stripe/profile lights across sections */
+  function addStripeLights() {
+    const targets = $$('main section').filter(sec => !sec.classList.contains('uv-final-signature'));
+    targets.forEach((sec, index) => {
+      if (sec.querySelector('.uv-led-rail')) return;
+      const count = index % 3 === 0 ? 2 : 1;
+      for (let i = 0; i < count; i++) {
+        const rail = document.createElement('span');
+        rail.className = 'uv-led-rail ' + (i === 0 ? 'uv-led-rail-a' : 'uv-led-rail-b');
+        rail.style.setProperty('--uv-led-delay', `${(index * .35) + (i * .7)}s`);
+        rail.style.setProperty('--uv-led-top', `${10 + ((index*13 + i*21) % 74)}%`);
+        rail.style.setProperty('--uv-led-left', `${4 + ((index*17 + i*29) % 86)}%`);
+        rail.style.setProperty('--uv-led-width', `${120 + ((index*41 + i*37) % 220)}px`);
+        rail.style.setProperty('--uv-led-rotate', `${[-24,-12,-6,6,12,18][(index+i)%6]}deg`);
+        sec.appendChild(rail);
+      }
+      sec.classList.add('uv-has-led-rails');
+    });
+  }
+
+  /* IDEA 6 — final colorful panel signature */
+  function addFinalSignatureSection() {
+    const footer = $('footer.site-footer');
+    const main = $('main');
+    if (!footer || !main || $('#uv-final-signature')) return;
+
+    const colors = panels.slice(0, 16);
+    const leftItems = colors.slice(0, 8).map((p, i) => `
+      <div class="uv-final-panel uv-from-left" style="--uv-final-delay:${i * .07}s">
+        <img src="${p.image}" alt="${p.name}">
+        <span>${p.name}</span>
+      </div>`).join('');
+
+    const rightItems = colors.slice(8, 16).map((p, i) => `
+      <div class="uv-final-panel uv-from-right" style="--uv-final-delay:${i * .07}s">
+        <img src="${p.image}" alt="${p.name}">
+        <span>${p.color.split('+')[0].trim()}</span>
+      </div>`).join('');
+
+    const section = document.createElement('section');
+    section.id = 'uv-final-signature';
+    section.className = 'uv-final-signature section-pad';
+    section.innerHTML = `
+      <div class="container uv-final-shell">
+        <div class="uv-final-topline reveal">
+          <span>THE LAST IMPRESSION</span>
+          <span>COLOUR / TEXTURE / LIGHT / UV INTERIO</span>
+        </div>
+        <div class="uv-final-stage">
+          <div class="uv-final-lane uv-final-left">${leftItems}</div>
+          <div class="uv-final-center">
+            <p class="eyebrow dark">MADE WITH COLOURFUL PANELS</p>
+            <h2><span>UV</span> <span>INTERIO</span></h2>
+            <p>Panels slide in from both sides and build the final signature — a colourful close for a premium showroom experience.</p>
+          </div>
+          <div class="uv-final-lane uv-final-right">${rightItems}</div>
+        </div>
+      </div>`;
+    main.insertBefore(section, footer);
+
+    if (!reduced && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.2});
+      io.observe(section);
+    } else {
+      section.classList.add('is-visible');
+    }
+  }
+
   function updateCollectionBento() {
     const panelCard = $('.bento-panels img');
     if (panelCard) panelCard.src = 'fluted-14.webp';
@@ -327,10 +403,14 @@
     replaceLightingCollection();
     cleanFloatingJhumarsAndAddTwo();
     updateCollectionBento();
+    addStripeLights();
+    addFinalSignatureSection();
 
     // Some earlier scripts add jhumars with a short delay; clean once more.
     setTimeout(cleanFloatingJhumarsAndAddTwo, 350);
     setTimeout(cleanFloatingJhumarsAndAddTwo, 1200);
+    setTimeout(addStripeLights, 420);
+    setTimeout(addFinalSignatureSection, 500);
   }
 
   if (document.readyState === 'loading') {

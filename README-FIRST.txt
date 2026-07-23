@@ -86,3 +86,22 @@ Expected GitHub Desktop changes:
 - 35 new image assets
 
 ONLY FOR UV INTERIO. DOES NOT TOUCH UNIQGRO.
+
+
+NEW EXTRA IDEAS ADDED
+IDEA 5 — STRIPE / PROFILE LIGHT ANIMATION
+- Subtle animated stripe lights are added across sections.
+- Light runs from start to end inside the strip, with blink + moving glow effect.
+- They sit behind content and move in different angles/positions for a premium showroom vibe.
+
+IDEA 6 — FINAL UV INTERIO ANIMATION SECTION
+- At the very end of the website, before the footer, a new final section is added.
+- Panel cards slide in from left and right.
+- Center text writes: UV INTERIO
+- Uses colourful panel finishes from the collection.
+
+TO INSTALL THIS UPDATE
+- Replace only:
+  uv-premium-collection.css
+  uv-premium-collection.js
+- Or easiest: copy all files from this ZIP into your uv-interio project folder and overwrite same-name files.
