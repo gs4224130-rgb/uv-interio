@@ -1,0 +1,32 @@
+/* UV INTERIO — SCROLL-BUILT WALL INTRO */
+.uv-wall-story{position:relative;height:1050vh;background:#111410;color:#fff;z-index:1}
+.uv-wall-stage{position:sticky;top:0;height:100vh;min-height:680px;overflow:hidden;isolation:isolate;background:radial-gradient(circle at 20% 18%,rgba(181,155,118,.14),transparent 32%),radial-gradient(circle at 86% 72%,rgba(216,198,170,.09),transparent 30%),linear-gradient(135deg,#121510,#22271f 55%,#171a16)}
+.uv-wall-ambient{position:absolute;inset:0;pointer-events:none;opacity:.55;background:linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,transparent,black 18%,black 82%,transparent)}
+.uv-wall-topline{position:absolute;z-index:6;top:116px;left:max(28px,calc((100vw - 1240px)/2));right:max(28px,calc((100vw - 1240px)/2));display:flex;justify-content:space-between;gap:24px;padding-top:14px;border-top:1px solid rgba(255,255,255,.16);font-size:.64rem;font-weight:700;letter-spacing:.18em;color:rgba(255,255,255,.55)}
+.uv-wall-count{color:#d8c6aa}
+.uv-wall-copy{position:absolute;z-index:6;left:max(28px,calc((100vw - 1240px)/2));top:50%;width:min(450px,36vw);transform:translateY(-50%);transition:opacity .08s linear}
+.uv-wall-copy>p{margin-bottom:18px;color:#d8c6aa;font-size:.68rem;font-weight:700;letter-spacing:.24em}
+.uv-wall-copy h2{margin:0;color:#fff;font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(3rem,5.3vw,6.3rem);letter-spacing:-.055em;line-height:.88}
+.uv-wall-copy h2 em{display:block;margin-top:.08em;color:#b59b76;font-weight:500}
+.uv-wall-frame{position:absolute;z-index:3;top:17%;right:max(4vw,calc((100vw - 1420px)/2));width:min(63vw,940px);height:66%;min-height:470px;overflow:hidden;border:1px solid rgba(255,255,255,.13);border-radius:6px;box-shadow:0 60px 140px rgba(0,0,0,.34);background:#2a2b27;perspective:1200px}
+.uv-wall-base{position:absolute;inset:0;opacity:.24;background:linear-gradient(90deg,rgba(255,255,255,.025),rgba(255,255,255,.08),rgba(0,0,0,.12)),url("showroom-interior.webp") center/cover;filter:grayscale(.28) brightness(.42);transition:opacity .3s ease}
+.uv-wall-panels{position:absolute;inset:0;display:grid;grid-template-columns:repeat(10,1fr);gap:2px}
+.uv-build-panel{position:relative;min-width:0;height:100%;overflow:hidden;opacity:0;transform-origin:center center;will-change:transform,opacity,filter;border-inline:1px solid rgba(255,255,255,.08);box-shadow:0 0 26px rgba(0,0,0,.24)}
+.uv-build-panel img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.06)}
+.uv-build-panel:nth-child(2n) img{object-position:60% center}.uv-build-panel:nth-child(3n) img{object-position:40% center}
+.uv-build-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 26%,rgba(0,0,0,.14))}
+.uv-build-panel>span{position:absolute;z-index:2;top:16px;left:50%;transform:translateX(-50%);font-size:.52rem;letter-spacing:.12em;color:rgba(255,255,255,.65);text-shadow:0 2px 8px rgba(0,0,0,.45)}
+.uv-wall-logo{position:absolute;z-index:5;left:50%;top:50%;width:94%;text-align:center;opacity:0;transform:translate(-50%,-50%) scale(.88);filter:blur(10px);will-change:transform,opacity,filter;text-shadow:0 4px 28px rgba(0,0,0,.44)}
+.uv-wall-logo:before{content:"";position:absolute;z-index:-1;left:50%;top:50%;width:76%;height:190%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(17,20,16,.62),transparent 68%);filter:blur(18px)}
+.uv-wall-logo strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:clamp(4rem,10vw,9.8rem);line-height:.82;font-weight:500;letter-spacing:-.07em;color:#fff}
+.uv-wall-logo strong span{color:#d8c6aa;font-style:italic}
+.uv-wall-logo small{display:block;margin-top:24px;font-size:.66rem;font-weight:700;letter-spacing:.36em;color:rgba(255,255,255,.74)}
+.uv-wall-direction{position:absolute;z-index:6;right:32px;bottom:44px;display:flex;align-items:center;gap:13px;transform:rotate(90deg);transform-origin:right center;font-size:.58rem;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.43)}
+.uv-wall-direction i{width:54px;height:1px;background:rgba(255,255,255,.32)}
+.uv-wall-progress{position:absolute;z-index:7;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08)}
+.uv-wall-progress i{display:block;width:100%;height:100%;transform:scaleX(0);transform-origin:left center;background:linear-gradient(90deg,#b59b76,#e1d4bf);will-change:transform}
+.uv-wall-story.is-complete .uv-wall-frame{box-shadow:0 80px 190px rgba(0,0,0,.45),0 0 0 1px rgba(216,198,170,.12)}
+.uv-wall-story.reduced-motion{height:100vh}
+@media(max-width:980px){.uv-wall-story{height:900vh}.uv-wall-topline{top:104px}.uv-wall-copy{top:20%;left:24px;width:calc(100% - 48px)}.uv-wall-copy h2{font-size:clamp(2.8rem,9vw,5.2rem)}.uv-wall-frame{left:24px;right:24px;top:43%;width:auto;height:45%;min-height:330px}.uv-wall-direction{display:none}}
+@media(max-width:640px){.uv-wall-stage{min-height:620px}.uv-wall-topline{top:94px;left:18px;right:18px;font-size:.52rem}.uv-wall-copy{left:18px;width:calc(100% - 36px)}.uv-wall-copy>p{font-size:.58rem}.uv-wall-frame{left:14px;right:14px;top:45%;height:42%;min-height:300px}.uv-wall-panels{gap:1px}.uv-build-panel>span{display:none}.uv-wall-logo strong{font-size:clamp(3.4rem,17vw,6rem)}.uv-wall-logo small{font-size:.48rem;letter-spacing:.22em;margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.uv-wall-story{height:100vh}.uv-build-panel{opacity:1!important;transform:none!important;filter:none!important}.uv-wall-copy{display:none}.uv-wall-logo{opacity:1!important;transform:translate(-50%,-50%) scale(1)!important;filter:none!important}}

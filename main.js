@@ -92,4 +92,121 @@
     const note = $('.form-note', form);
     if (note) note.textContent = 'Form layout is ready. Connect Formspree, Netlify Forms or your backend before going live with submissions.';
   });
+
+  const homeHero = $('.hero.hero-v2');
+
+  if (homeHero) {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'scroll-wall.css';
+    document.head.appendChild(css);
+
+    const panelImages = [
+      'panel-01.webp','panel-02.webp','panel-03.webp','panel-04.webp','panel-05.webp',
+      'panel-06.webp','panel-07.webp','panel-08.webp','panel-09.webp','panel-10.webp'
+    ];
+
+    const story = document.createElement('section');
+    story.className = 'uv-wall-story';
+    story.setAttribute('aria-label', 'Scroll to build the UV Interio wall');
+    story.innerHTML = `
+      <div class="uv-wall-stage">
+        <div class="uv-wall-ambient" aria-hidden="true"></div>
+        <div class="uv-wall-topline"><span>UV INTERIO / MATERIAL STORY</span><span class="uv-wall-count">01 / 10</span></div>
+        <div class="uv-wall-copy"><p>SCROLL TO BUILD</p><h2>One panel.<br>One decision.<br><em>One wall transformed.</em></h2></div>
+        <div class="uv-wall-frame" aria-hidden="true">
+          <div class="uv-wall-base"></div>
+          <div class="uv-wall-panels">
+            ${panelImages.map((src, i) => `
+              <div class="uv-build-panel" data-build-panel="${i}">
+                <img src="${src}" alt="">
+                <span>${String(i + 1).padStart(2,'0')}</span>
+              </div>`).join('')}
+          </div>
+          <div class="uv-wall-logo"><strong><span>UV</span> INTERIO</strong><small>AAPKE SAPNO KA GHAR</small></div>
+        </div>
+        <div class="uv-wall-direction"><i></i><span>KEEP SCROLLING</span></div>
+        <div class="uv-wall-progress"><i></i></div>
+      </div>`;
+    homeHero.before(story);
+
+    const panels = $$('.uv-build-panel', story);
+    const count = $('.uv-wall-count', story);
+    const copy = $('.uv-wall-copy', story);
+    const logo = $('.uv-wall-logo', story);
+    const progressBar = $('.uv-wall-progress i', story);
+    const direction = $('.uv-wall-direction', story);
+    const wallBase = $('.uv-wall-base', story);
+
+    const clamp = (n, min = 0, max = 1) => Math.min(max, Math.max(min, n));
+    let ticking = false;
+
+    const updateWallStory = () => {
+      ticking = false;
+      const rect = story.getBoundingClientRect();
+      const travel = Math.max(1, story.offsetHeight - innerHeight);
+      const progress = clamp(-rect.top / travel);
+      if (progressBar) progressBar.style.transform = `scaleX(${progress})`;
+
+      const panelPhaseEnd = 0.78;
+      const panelSlice = panelPhaseEnd / panels.length;
+
+      panels.forEach((panel, i) => {
+        const start = i * panelSlice;
+        const local = clamp((progress - start) / (panelSlice * 0.88));
+        const ease = 1 - Math.pow(1 - local, 3);
+        const fromLeft = i % 2 === 0;
+        const x = (fromLeft ? -118 : 118) * (1 - ease);
+        const rotate = (fromLeft ? -8 : 8) * (1 - ease);
+        const scale = 0.93 + ease * 0.07;
+        panel.style.transform = `translate3d(${x}vw,0,0) rotate(${rotate}deg) scale(${scale})`;
+        panel.style.opacity = String(clamp(local * 1.4));
+        panel.style.filter = `saturate(${0.72 + ease * 0.28}) brightness(${0.78 + ease * 0.22})`;
+      });
+
+      const reached = Math.min(10, Math.max(1, Math.floor(progress / panelSlice) + 1));
+      if (count) count.textContent = `${String(reached).padStart(2,'0')} / 10`;
+
+      const final = clamp((progress - 0.80) / 0.16);
+      const finalEase = 1 - Math.pow(1 - final, 3);
+      if (logo) {
+        logo.style.opacity = String(finalEase);
+        logo.style.transform = `translate(-50%,-50%) scale(${0.88 + finalEase * 0.12})`;
+        logo.style.filter = `blur(${(1-finalEase)*10}px)`;
+      }
+      if (copy) {
+        const fade = clamp(1 - progress / 0.42);
+        copy.style.opacity = String(fade);
+        copy.style.transform = `translateY(${-26 * progress}px)`;
+      }
+      if (direction) direction.style.opacity = String(clamp(1 - progress / 0.72));
+      if (wallBase) wallBase.style.opacity = String(0.24 + finalEase * 0.52);
+      story.classList.toggle('is-complete', final > 0.55);
+    };
+
+    const requestUpdate = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateWallStory);
+      }
+    };
+
+    updateWallStory();
+    addEventListener('scroll', requestUpdate, { passive: true });
+    addEventListener('resize', requestUpdate, { passive: true });
+
+    if (reducedMotion) {
+      story.classList.add('reduced-motion');
+      panels.forEach(panel => {
+        panel.style.transform = 'none';
+        panel.style.opacity = '1';
+        panel.style.filter = 'none';
+      });
+      if (logo) {
+        logo.style.opacity = '1';
+        logo.style.transform = 'translate(-50%,-50%) scale(1)';
+        logo.style.filter = 'none';
+      }
+    }
+  }
 })();
