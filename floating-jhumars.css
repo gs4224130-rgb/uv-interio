@@ -1,16 +1,13 @@
-/* =========================================================
-   UV INTERIO — 3 FLOATING JHUMARS
-   ========================================================= */
+/* UV INTERIO — 3 FLOATING JHUMARS / FIRST PAGE FIX */
 
-.uv-jhumar-host{
-  position:relative;
+.uv-wall-stage{
   isolation:isolate;
 }
 
 .uv-floating-jhumar{
   position:absolute;
-  z-index:4;
-  width:clamp(118px,12vw,190px);
+  z-index:12;
+  width:clamp(120px,11vw,185px);
   aspect-ratio:.78;
   pointer-events:none;
   opacity:0;
@@ -23,12 +20,10 @@
   width:100%;
   height:100%;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:50% 50% 44% 56% / 42% 42% 58% 58%;
-  background:rgba(28,31,27,.38);
-  box-shadow:
-    0 24px 70px rgba(0,0,0,.24),
-    inset 0 0 0 1px rgba(216,198,170,.08);
+  border:1px solid rgba(216,198,170,.34);
+  border-radius:48% 48% 42% 42% / 34% 34% 58% 58%;
+  background:rgba(20,23,20,.5);
+  box-shadow:0 24px 70px rgba(0,0,0,.34),0 0 40px rgba(181,155,118,.08);
   backdrop-filter:blur(5px);
   transform-origin:50% 0%;
 }
@@ -40,8 +35,8 @@
   height:100%;
   object-fit:cover;
   object-position:center;
-  opacity:.92;
-  filter:saturate(.86) contrast(1.03) brightness(.9);
+  opacity:.98;
+  filter:saturate(.92) contrast(1.05) brightness(.96);
   transform:scale(1.08);
 }
 
@@ -49,147 +44,130 @@
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.08),transparent 32%,rgba(9,11,9,.34)),
-    radial-gradient(circle at 50% 44%,transparent 28%,rgba(13,15,13,.14) 72%);
+  background:linear-gradient(180deg,rgba(255,255,255,.08),transparent 36%,rgba(8,10,8,.22));
 }
 
 .uv-jhumar-glow{
   position:absolute;
   z-index:3;
   left:50%;
-  top:40%;
-  width:58%;
+  top:45%;
+  width:72%;
   aspect-ratio:1;
   transform:translate(-50%,-50%);
   border-radius:50%;
-  background:radial-gradient(circle,rgba(236,215,174,.34),rgba(181,155,118,.09) 42%,transparent 72%);
-  filter:blur(10px);
+  background:radial-gradient(circle,rgba(248,221,166,.42),rgba(181,155,118,.11) 42%,transparent 72%);
+  filter:blur(9px);
   mix-blend-mode:screen;
 }
 
 .uv-jhumar-float small{
   position:absolute;
   z-index:5;
-  left:14px;
-  right:14px;
-  bottom:12px;
-  color:rgba(255,255,255,.7);
-  font-size:.48rem;
-  line-height:1.25;
-  letter-spacing:.11em;
-  text-transform:uppercase;
+  left:10px;
+  right:10px;
+  bottom:10px;
   text-align:center;
-  text-shadow:0 2px 8px rgba(0,0,0,.5);
+  font-size:.45rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.72);
+  text-shadow:0 2px 9px rgba(0,0,0,.7);
 }
 
+/* 1 — enters from upper-right */
 .uv-jhumar-one{
-  right:3.2vw;
-  top:18%;
-  transform:translate3d(90px,-90px,0) rotate(8deg) scale(.82);
+  right:4vw;
+  top:14%;
+  transform:translate3d(130px,-90px,0) rotate(8deg) scale(.82);
 }
 
+/* 2 — enters from left */
 .uv-jhumar-two{
-  left:-1.5vw;
-  top:21%;
-  width:clamp(126px,13vw,205px);
-  transform:translate3d(-110px,30px,0) rotate(-9deg) scale(.84);
+  left:3vw;
+  top:58%;
+  width:clamp(105px,10vw,165px);
+  transform:translate3d(-140px,20px,0) rotate(-8deg) scale(.82);
 }
 
+/* 3 — enters from bottom-right */
 .uv-jhumar-three{
-  right:2vw;
-  top:16%;
-  width:clamp(122px,12.5vw,200px);
-  transform:translate3d(100px,100px,0) rotate(7deg) scale(.84);
+  right:16vw;
+  bottom:5%;
+  width:clamp(112px,10.5vw,175px);
+  transform:translate3d(90px,140px,0) rotate(7deg) scale(.84);
 }
 
 .uv-floating-jhumar.is-visible{
-  opacity:.9;
-  transform:translate3d(0,0,0) rotate(0) scale(1);
-  transition:
-    opacity .75s ease,
-    transform 1.15s cubic-bezier(.16,1,.3,1);
+  opacity:.86;
+  transform:translate3d(0,0,0) rotate(0deg) scale(1);
+  transition:opacity .65s ease,transform 1.05s cubic-bezier(.16,1,.3,1);
 }
 
 .uv-jhumar-one.is-visible .uv-jhumar-float{
-  animation:uvJhumarFloatOne 5.4s ease-in-out 1.05s infinite alternate;
+  animation:uvFloatOne 4.8s ease-in-out .8s infinite alternate;
 }
-
 .uv-jhumar-two.is-visible .uv-jhumar-float{
-  animation:uvJhumarFloatTwo 6.1s ease-in-out 1.15s infinite alternate;
+  animation:uvFloatTwo 5.5s ease-in-out 1s infinite alternate;
 }
-
 .uv-jhumar-three.is-visible .uv-jhumar-float{
-  animation:uvJhumarFloatThree 5.8s ease-in-out 1.1s infinite alternate;
+  animation:uvFloatThree 5.1s ease-in-out 1.15s infinite alternate;
 }
 
-@keyframes uvJhumarFloatOne{
-  from{transform:translate3d(0,0,0) rotate(-1.3deg)}
-  to{transform:translate3d(-10px,12px,0) rotate(1.5deg)}
+@keyframes uvFloatOne{
+  from{transform:translate3d(0,0,0) rotate(-1.2deg)}
+  to{transform:translate3d(-12px,10px,0) rotate(1.4deg)}
 }
-
-@keyframes uvJhumarFloatTwo{
+@keyframes uvFloatTwo{
   from{transform:translate3d(0,0,0) rotate(1deg)}
-  to{transform:translate3d(12px,-9px,0) rotate(-1.2deg)}
+  to{transform:translate3d(11px,-12px,0) rotate(-1.2deg)}
 }
-
-@keyframes uvJhumarFloatThree{
+@keyframes uvFloatThree{
   from{transform:translate3d(0,0,0) rotate(-1deg)}
-  to{transform:translate3d(-8px,-12px,0) rotate(1.4deg)}
+  to{transform:translate3d(-9px,-10px,0) rotate(1.3deg)}
 }
 
-/* Keep the hero jhumar decorative and away from main text */
-.hero-v2 .uv-jhumar-one{
-  z-index:3;
+/* Keep them decorative and away from the main left copy */
+.uv-wall-copy,
+.uv-wall-topline,
+.uv-wall-frame,
+.uv-wall-direction,
+.uv-wall-progress{
+  z-index:13;
 }
 
-.collections .uv-jhumar-two{
-  z-index:0;
-  opacity:0;
+.uv-wall-frame{
+  z-index:8;
 }
 
-.collections .uv-jhumar-two.is-visible{
-  opacity:.74;
-}
-
-.collections>.container{
-  position:relative;
-  z-index:1;
-}
-
-.lighting-edit .uv-jhumar-three{
-  z-index:0;
-}
-
-.lighting-edit>.container{
-  position:relative;
-  z-index:1;
+/* Jhumars sit between background and main wall/copy */
+.uv-floating-jhumar{
+  z-index:9;
 }
 
 @media(max-width:900px){
-  .uv-floating-jhumar{
-    width:clamp(92px,18vw,145px);
-    opacity:0;
-  }
-  .uv-floating-jhumar.is-visible{opacity:.7}
-  .uv-jhumar-one{right:2vw;top:14%}
-  .uv-jhumar-two{left:-3vw;top:15%}
-  .uv-jhumar-three{right:-2vw;top:12%}
+  .uv-floating-jhumar{width:110px}
+  .uv-jhumar-one{right:-18px;top:12%}
+  .uv-jhumar-two{left:-22px;top:61%}
+  .uv-jhumar-three{right:8vw;bottom:3%}
+  .uv-floating-jhumar.is-visible{opacity:.65}
   .uv-jhumar-float small{display:none}
 }
 
 @media(max-width:640px){
-  .uv-floating-jhumar{
-    width:94px;
-  }
-  .uv-jhumar-one{right:-24px;top:15%}
-  .uv-jhumar-two{left:-30px;top:12%}
-  .uv-jhumar-three{right:-28px;top:10%}
-  .uv-floating-jhumar.is-visible{opacity:.55}
+  .uv-floating-jhumar{width:82px}
+  .uv-jhumar-one{right:-20px;top:13%}
+  .uv-jhumar-two{left:-22px;top:64%}
+  .uv-jhumar-three{right:4vw;bottom:2%}
+  .uv-floating-jhumar.is-visible{opacity:.5}
 }
 
 @media(prefers-reduced-motion:reduce){
   .uv-floating-jhumar{
-    display:none!important;
+    opacity:.35;
+    transform:none!important;
+  }
+  .uv-jhumar-float{
+    animation:none!important;
   }
 }

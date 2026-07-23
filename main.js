@@ -211,49 +211,36 @@
   }
 
   /* =========================================================
-     UV INTERIO — 3 FLOATING JHUMARS
-     Three subtle chandelier moments across the homepage.
-     They enter from different directions, then gently float.
+     UV INTERIO — 3 FLOATING JHUMARS / FIRST PAGE
+     Reliable version: all 3 live inside the pinned scroll-wall stage.
      ========================================================= */
-  if ($('.hero.hero-v2')) {
+  const wallStage = $('.uv-wall-stage');
+
+  if (wallStage) {
     const jhumarCss = document.createElement('link');
     jhumarCss.rel = 'stylesheet';
-    jhumarCss.href = 'floating-jhumars.css';
+    jhumarCss.href = 'floating-jhumars.css?v=3';
     document.head.appendChild(jhumarCss);
 
     const jhumarItems = [
-      { target: '.hero.hero-v2', image: 'light-01.webp', className: 'uv-jhumar-one', label: 'Grand Crystal Cascade' },
-      { target: '.collections', image: 'light-06.webp', className: 'uv-jhumar-two', label: 'Halo Ring Light' },
-      { target: '.lighting-edit', image: 'light-07.webp', className: 'uv-jhumar-three', label: 'Crystal Drum' }
+      { image:'light-01.webp', className:'uv-jhumar-one', label:'Grand Crystal Cascade', delay:250 },
+      { image:'light-06.webp', className:'uv-jhumar-two', label:'Halo Ring Light', delay:700 },
+      { image:'light-07.webp', className:'uv-jhumar-three', label:'Crystal Drum', delay:1150 }
     ];
 
     jhumarItems.forEach((item, index) => {
-      const section = $(item.target);
-      if (!section) return;
-
-      section.classList.add('uv-jhumar-host');
-
       const deco = document.createElement('div');
       deco.className = `uv-floating-jhumar ${item.className}`;
-      deco.setAttribute('aria-hidden', 'true');
+      deco.setAttribute('aria-hidden','true');
       deco.innerHTML = `
         <span class="uv-jhumar-float">
           <span class="uv-jhumar-glow"></span>
           <img src="${item.image}" alt="">
           <small>${String(index + 1).padStart(2,'0')} / ${item.label}</small>
         </span>`;
-      section.appendChild(deco);
+      wallStage.appendChild(deco);
+      window.setTimeout(() => deco.classList.add('is-visible'), item.delay);
     });
-
-    const jhumarObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        $$('.uv-floating-jhumar', entry.target).forEach(el => el.classList.add('is-visible'));
-        jhumarObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.22 });
-
-    $$('.uv-jhumar-host').forEach(section => jhumarObserver.observe(section));
   }
 
 })();
