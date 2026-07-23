@@ -1,41 +1,88 @@
-UV INTERIO — PANEL SHOWROOM REDESIGN
+UV INTERIO — 4 IDEA PREMIUM UPGRADE
 
-THIS USES YOUR NEW UPLOADED PANEL IMAGES.
+THIS PACKAGE IMPLEMENTS YOUR 4 FINAL IDEAS.
 
-CHANGES
-- Replaces the 10 old scroll-wall panel visuals with 10 new colored/fluted panel textures made from your uploaded panel chart.
-- Adds panel-wall background accents to major homepage sections.
-- Adds warm profile/strip lights around sections and headings.
-- Keeps your existing first-page floating jhumars.
-- Adds 4 more floating jhumars lower on the homepage.
-- Adds one BIG jhumar that comes from above and travels down while you scroll the first pinned page.
-- Keeps all existing homepage content and scroll-wall animation.
+IDEA 1 — FIRST PAGE PANEL SEARCH
+- Premium search on the FIRST pinned scroll page.
+- Search walnut, grey, marble, gold, white, etc.
+- Suggestions appear instantly.
+- Selecting/searching jumps to and filters the real panel collection.
 
-INSTALL INTO:
-Documents -> GitHub -> uv-interio
+IDEA 2 — NEW JHUMARS IN OUR COLLECTION
+- Replaces the old simple lighting strip with a premium editorial Jhumar Edit.
+- Uses your newly uploaded chandelier/jhumar photos.
+- Large feature cards + clean premium grid.
 
-REPLACE:
-- index.html
+IDEA 3 — ONLY TWO FLOATING JHUMARS ON FIRST PAGE
+- Removes ALL earlier extra floating jhumars.
+- Only two remain: one top-left and one top-right.
+- They look roof-hung and use transparent-background assets.
+- Gentle movement only.
 
-ADD:
-- panel-showroom.js
-- panel-showroom.css
-- uv-wall-bg-walnut.webp
-- uv-wall-bg-showroom.webp
-- uv-wall-bg-tv.webp
-- uv-wall-bg-colors.webp
-- uv-panel-strip-01.webp through uv-panel-strip-10.webp
+IDEA 4 — COMPLETELY NEW PREMIUM PANEL COLLECTION
+- Removes the old 20-panel collection UI.
+- Adds all 26 panels from fluted.pdf, page by page.
+- Each panel has:
+  code
+  curated display name
+  colour
+  finish/style
+- Search + filter by Light / Wood / Stone / Dark.
+- Asymmetric editorial grid.
+- Hover texture reveal.
+- Full quick-view modal.
+- Professional + premium + aesthetic + Gen-Z visual direction.
 
-DO NOT DELETE:
-- main.js
-- styles.css
-- scroll-wall.css
-- floating-jhumars.css
+DESIGN REFERENCE LOGIC
+The collection uses the same high-level ecommerce ideas seen on major wall-panel collection sites:
+- searchable/filterable material library
+- strong product imagery
+- clear finish/color metadata
+- premium collection hierarchy
+But the visual styling is custom for UV INTERIO.
 
-GITHUB DESKTOP:
-Commit: UV Interio panel showroom redesign
-Then Push origin.
-Wait for green deployment.
-Open www.uvinterio.com in Incognito and press Ctrl + Shift + R.
+IMPORTANT ABOUT PANEL NAMES
+The uploaded PDF contains image pages and no reliable typed product-name metadata.
+So I created premium DISPLAY NAMES based on the visible finish/color.
+Your real SKU/product codes can replace these names later.
 
-ONLY FOR UV INTERIO — NOT UNIQGRO.
+INSTALL
+1. Open:
+   Documents -> GitHub -> uv-interio
+
+2. From this ZIP, REPLACE:
+   index.html
+
+3. ADD:
+   uv-premium-collection.css
+   uv-premium-collection.js
+   fluted-01.webp through fluted-26.webp
+   jhumar-collection-01.webp through jhumar-collection-07.webp
+   jhumar-roof-left.png
+   jhumar-roof-right.png
+
+4. DO NOT DELETE:
+   main.js
+   styles.css
+   scroll-wall.css
+   floating-jhumars.css
+   panel-showroom.css
+   panel-showroom.js
+   catalog-data.js
+
+5. GitHub Desktop commit:
+   UV Interio premium collection upgrade
+
+6. Push origin.
+
+7. Wait for GitHub Pages deployment green.
+
+8. Open www.uvinterio.com in Incognito and press:
+   Ctrl + Shift + R
+
+Expected GitHub Desktop changes:
+- index.html changed
+- 2 new code files
+- 35 new image assets
+
+ONLY FOR UV INTERIO. DOES NOT TOUCH UNIQGRO.
