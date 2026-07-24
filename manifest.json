@@ -1,0 +1,13 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "uvinterio",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "tijara",
+  "start_url": "/",
+  "theme_color": "#111111"
+  "id": "uvinterio",
+  "description": "Premium interior panels, jhumars and home decor collections by UV INTERIO."
+}
